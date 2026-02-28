@@ -1,0 +1,19 @@
+# Raw data – never upload to GitHub
+*.csv
+*.xlsx
+*.json
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Anaconda environments
+.conda/
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
