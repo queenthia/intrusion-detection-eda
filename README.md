@@ -22,15 +22,15 @@ Mapping Table
 
 Guided by the CIA Triad (ISO/IEC 27001) and the Cyber Kill Chain (Lockheed Martin, 2011) frameworks:
 
-| Raw Dataset Column | Construct | Framework | Why It Predicts Attacks |
-
-| `failed_logins` | Credential Threat (Integrity) | CIA Triad | Brute-force attempts violate system integrity |
-| `login_attempts` | Reconnaissance Activity | Kill Chain Stage 1 | High volume indicates automated credential scanning |
-| `ip_reputation_score` | Threat Intelligence Signal | Kill Chain Stage 2 | Low-reputation IPs correlate with known malicious actors |
-| `encryption_used` | Confidentiality Control | CIA Triad | Weak encryption (None/DES) signals attacker behaviour |
-| `network_packet_size` | Traffic Anomaly / Availability | CIA Triad | Abnormal sizes indicate exfiltration or DoS payloads |
-| `protocol_type` | Network Attack Vector | Kill Chain Stage 3 | ICMP/UDP commonly abused in amplification attacks |
-| `unusual_time_access` | Behavioural Anomaly | Kill Chain Stage 4 | Off-hours access indicates compromised credentials |
+| Raw Dataset Column    | Construct                     | Framework          | Why It Predicts Attacks                                  |
+| ----------------------| ----------------------------- | ------------------ | -------------------------------------------------------- |
+| `failed_logins`       | Credential Threat (Integrity) | CIA Triad          | Brute-force attempts violate system integrity            |
+| `login_attempts`      | Reconnaissance Activity       | Kill Chain Stage 1 | High volume indicates automated credential scanning      |
+| `ip_reputation_score` | Threat Intelligence Signal    | Kill Chain Stage 2 | Low-reputation IPs correlate with known malicious actors |
+| `encryption_used`     | Confidentiality Control       | CIA Triad          | Weak encryption (None/DES) signals attacker behaviour    |
+| `network_packet_size` | Traffic Anomaly / Availability| CIA Triad          | Abnormal sizes indicate exfiltration or DoS payloads     |
+| `protocol_type`       | Network Attack Vector         | Kill Chain Stage 3 | ICMP/UDP commonly abused in amplification attacks        |
+| `unusual_time_access` | Behavioural Anomaly           | Kill Chain Stage 4 | Off-hours access indicates compromised credentials       |
 
 How to Run (Anaconda)
 
