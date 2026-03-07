@@ -49,3 +49,47 @@ How to Run (Anaconda)
 | Class imbalance          | SMOTE                        | Creates synthetic minority samples; avoids biased classifiers |
 | Numerical significance   | Pearson Correlation + T-test | Tests linear relationship and group mean differences          |
 | Categorical significance | Chi-Square Test              | Tests independence between category and target                |
+
+## Coursework 2 — Predictive Modeling, Evaluation & Explainable AI
+
+**File:** `Coursework2_Modeling_SHAP.ipynb`
+
+### What this notebook does
+
+Builds on the EDA from CW1 to train and evaluate two machine learning models
+for detecting cyberattacks, then explains their decisions using SHAP.
+
+### Structure
+
+| Part   | Description                                                    |
+| ------ | -------------------------------------------------------------- |
+| Part 1 | Re-runs CW1 preprocessing pipeline (self-contained)            |
+| Part 2 | Trains Random Forest and XGBoost with class imbalance handling |
+| Part 3 | Evaluates models using PR-AUC, Confusion Matrix, F1-Score      |
+
+### How to run CW2
+
+1. Open `Coursework2_Modeling_SHAP.ipynb` in Google Colab
+2. Upload `cybersecurity_intrusion_data.csv` to the Colab runtime
+3. Run all cells from top to bottom
+4. CW2 is **fully self-contained** — no need to run CW1 first
+
+### Key Results
+
+| Metric            | Random Forest | XGBoost |
+| ----------------- | ------------- | ------- |
+| PR-AUC            | 0.9063        | 0.9093  |
+| ROC-AUC           | 0.8766        | 0.8786  |
+| Recall (Attack)   | 0.7491        | 0.7538  |
+| F1-Score (Attack) | 0.8520        | 0.8383  |
+
+**Selected model: XGBoost** — marginally higher PR-AUC and Recall,
+meaning it catches slightly more attacks with fewer missed detections.
+
+### SHAP Findings
+
+The SHAP analysis confirms the theoretical framework from CW1:
+
+- `failed_logins` — top predictor (brute-force signal, CIA Triad: Availability)
+- `ip_reputation_score` — second predictor (threat intelligence, Kill Chain: Reconnaissance)
+- `login_attempts` — third predictor (credential stuffing signal)
