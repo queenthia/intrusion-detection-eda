@@ -6,13 +6,14 @@ Authors
 
 Group of 3 – Master's Data Science Programme  
 **Niyongabo Queenthia Olga 2025/MSIS/045/PS**
-**Siama Mary 2025/MSIS/044/PS**
+**Siama Mary 2025/MSIS/046/PS**
 **Kyogabirwe Scovia 2025/PGD/002/PS**
 
 project Overview
 This project applies to a cybersecurity network intrusion dataset. The goal is to identify the most predictive features for the binary target variable 'attack_detected' (1 = attack, 0 = normal traffic).
 
 Dataset
+The intrusion detection dataset used in this study is publicly available on Kaggle at https://www.kaggle.com/datasets/dnkumars/cybersecurity-intrusion-detection-dataset.
 Source: 'Cybersecurity_intrusion_data.csv' From Kaggle
 Columns: 11
 Rows: 9,537 network sessions  
